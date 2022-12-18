@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+//    id 'org.jetbrains.kotlin.android'
+}
+
+dependencies {
+    compileOnly 'com.android.tools.lint:lint-api:30.3.0'
+    compileOnly 'com.android.tools.lint:lint-checks:30.3.0'
+    implementation 'com.google.code.gson:gson:2.10'
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+jar {
+    manifest {
+        attributes("Lint-Registry-v2": "com.example.mylibrary.TestIssueRegistry")
+    }
+}
